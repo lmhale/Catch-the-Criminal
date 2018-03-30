@@ -36,12 +36,13 @@ h1 {
 #contBtn {
         width: 68px;
         height: 25px;
+        text-align:center;
         background: pink;
         color: white;
         font-size: 12px;
         font-weight: bold;
         border-radius: 20px;
-        position: relative;
+        position: absolute;
         top: 310px;
         left: 132px;
         display:none;
@@ -59,7 +60,116 @@ h1 {
     position: absolute;
     left: 834px;
     bottom: 340px;
+    display:none;
 }
+
+
+
+#Australia {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 1100px;
+    bottom: 150px;
+    display:none;
+}
+
+#France {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 660px;
+    bottom: 400px;
+    display:none;
+}
+#Russia {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 760px;
+    bottom: 460px;
+    display:none;
+}
+
+#Brazil {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 515px;
+    bottom: 140px;
+    display:none;
+}
+
+
+#India {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 910px;
+    bottom: 320px;
+    display:none;
+}
+
+#Mexico {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 300px;
+    bottom:320px;
+    display:none;
+}
+
+#China {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 1000px;
+    bottom: 320px;
+    display:none;
+}
+
+#unitedStates {
+    width: 10px;
+    height: 10px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 400px;
+    bottom:350px;
+    display:none;
+}
+
+ 
 
 
 .span {
@@ -75,7 +185,7 @@ h1 {
     font-size:20px;
     line-height:25px;
     background: rgba(0, 0, 0, 0.92);
-    width: 330px;
+    width: 380px;
     height: 421px;
     position: absolute;
     left: 450px;
@@ -115,5 +225,49 @@ h1 {
 #form {
     text-align: center;
     margin:20px;
+}
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    font-size:10px;
+    visibility: hidden;
+    width: 70px;
+    height:15px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left:100%;
+    right:-100%;
+    margin-left: -40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 

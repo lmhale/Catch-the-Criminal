@@ -37,6 +37,9 @@ $('#myForm').appendTo(formDiv);
 
 
     $("#myForm").submit(function(e) {
+        
+      
+      
         $("#container").hide();
         $("#board").show();
        
@@ -57,16 +60,22 @@ $('#myForm').appendTo(formDiv);
         $(message).appendTo('#messageBox');
 
        $("#contBtn").show();
+       // click continue button
+       $("#contBtn").click(function(){
+
+          
+                
+        $("#messageBox").hide();
+       $('#Iran').show();
+    });
+      
+
         e.preventDefault();
 
 });
 
 
 
-$("#contBtn").click(function(){
-    $("#messageBox").hide();
-   
-});
 
  
 
@@ -75,33 +84,106 @@ let contBtn = $("#contBtn");
 
 
 $("#Iran").click((e) => {
+    $("#Iran").hide();
     $("#messageBox").show();
-    //$("#contBtn").show(); 
-    message="hello there";
+    message="Go to Australia";
     $('#messageBox').html(message);
-    //console.log('#contBtn');
+    // Iran continue button
     $("#messageBox").append(contBtn);
     e.preventDefault();
     $("#contBtn").click(function(){
         $("#messageBox").hide();
-       
+        $("#Australia").show();
+        $("#Brazil").show();
+        $("#Russia").show();
     });
-
-   
-});
-
-$("#test2").click(function(){
+    $("#Australia").click(function(){
+        $("#messageBox").show(); 
+        message="hiiiiiiii";
+        $('#messageBox').html(message);
+        $("#messageBox").append(contBtn);
+        $("#Brazil").hide();
+            $("#Russia").hide();
+        //continue button form australia
+        $("#contBtn").click(function(){
+            $("#messageBox").hide();
+            $('#Australia').hide();
+            $('#unitedStates').show();
+            $('#Brazil').show();
+            $("#Brazil").click(function(){
+                $("#messageBox").show(); 
+                message="this is a different message";
+                $('#messageBox').html(message);
+                $("#messageBox").append(contBtn);
+                 //continue button form australia
+                 $("#contBtn").click(function(){
+                    $("#messageBox").hide();
+                  
+                });
+                e.preventDefault();
+            });
+          
+        });
+        
+        e.preventDefault();
+    });
+////////// Brazil
+$("#Brazil").click(function(){
     $("#messageBox").show(); 
-    message="hiiiiiiii";
+    message="oh know none of the witnesses have seen the thief! The plane ride cost you some time";
     $('#messageBox').html(message);
-    $("#contBtn").show();
-    
+    $("#messageBox").append(contBtn);
+     //continue button form australia
+     $("#contBtn").click(function(){
+        $("#messageBox").hide();
+      
+    });
     e.preventDefault();
 });
 
-let Iran = $('#Iran').appendTo('#board');
+//// Russia
 
-let countries = [Iran];
+$("#Russia").click(function(){
+    $("#messageBox").show(); 
+    message="not in Russia";
+    $('#messageBox').html(message);
+    $("#messageBox").append(contBtn);
+    //continue button for Russia
+    $("#contBtn").click(function(){
+        $("#messageBox").hide();
+      
+    });
+    
+    e.preventDefault();
+});
+    
+    
+    
+   
+});
+
+
+ 
+ 
+ 
+ 
+
+
+
+let Iran = $('#Iran').appendTo('#board');
+let Australia = $('#Australia').appendTo('#board');
+let France = $('#France').appendTo('#board');
+let Russia = $('#Russia').appendTo('#board');
+let Brazil = $('#Brazil').appendTo('#board');
+let India = $('#India').appendTo('#board');
+let Mexico = $('#Mexico').appendTo('#board');
+let China = $('#China').appendTo('#board');
+let unitedStates = $('#unitedStates').appendTo('#board');
+let countries = [Iran,Australia,France,Russia,Brazil,India,Mexico,China,unitedStates];
+
+
+
+
 
 
 
