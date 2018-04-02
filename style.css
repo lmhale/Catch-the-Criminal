@@ -47,6 +47,7 @@ h1 {
     position: relative;
     left: 885px;
     top: 486px;
+    display: none;
 }
 
 
@@ -87,7 +88,7 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 830px;
+    left: 815px;
     bottom: 370px;
     display:none;
 }
@@ -102,7 +103,7 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 1140px;
+    left: 1110px;
     bottom: 150px;
     display:none;
 }
@@ -115,8 +116,8 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 660px;
-    bottom: 420px;
+    left: 650px;
+    bottom: 430px;
     display:none;
 }
 #Russia {
@@ -127,7 +128,7 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 760px;
+    left: 740px;
     bottom: 480px;
     display:none;
 }
@@ -140,8 +141,8 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 515px;
-    bottom: 180px;
+    left: 495px;
+    bottom: 190px;
     display:none;
 }
 
@@ -154,8 +155,8 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 910px;
-    bottom: 320px;
+    left: 885px;
+    bottom: 350px;
     display:none;
 }
 
@@ -180,7 +181,7 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 1020px;
+    left: 1010px;
     bottom: 385px;
     display:none;
 }
