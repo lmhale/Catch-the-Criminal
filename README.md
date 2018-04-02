@@ -5,3 +5,10 @@ Catch the Criminal is an adventure game (loosely based on the 90's game "Where i
  Link to project:
  https://git.generalassemb.ly/pages/lmhale7/Haleproject-1/
 
+# Technologies
+
+My Landing page utilizes a form to initiate the game. The input submitted in the form is stored in a variable and is used on the following page.
+
+I relied heavily on click events in my project which were all bundled together. Each click event triggered another, and appended various text and divs to the page. This control flow element was the most time consuming aspect of building the game.
+
+I implemented a counter to keep track of the user's money. The decrementation of the counter occurs after the user clicks on any div with the class "tooltip."
