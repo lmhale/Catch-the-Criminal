@@ -2,11 +2,13 @@ html, body {
     height: 100%;
     width:100%;
     background: black;
+ 
 }
 
 h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 45px;
+    font-family: 'Lora', serif;
 }
 
 #container {
@@ -17,7 +19,7 @@ h1 {
    border-radius: 30px;
    display: block;
    position: relative;
-   bottom: 20px;
+   margin-top:-45px;
    
 
 }
@@ -43,7 +45,7 @@ h1 {
     padding: 5px 5px 14px 5px;
     border-radius: 16px;
     position: relative;
-    left: 870px;
+    left: 885px;
     top: 486px;
 }
 
@@ -85,8 +87,8 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 834px;
-    bottom: 340px;
+    left: 830px;
+    bottom: 370px;
     display:none;
 }
 
@@ -100,7 +102,7 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 1100px;
+    left: 1140px;
     bottom: 150px;
     display:none;
 }
@@ -114,7 +116,7 @@ h1 {
     border-radius: 50px;
     position: absolute;
     left: 660px;
-    bottom: 400px;
+    bottom: 420px;
     display:none;
 }
 #Russia {
@@ -126,7 +128,7 @@ h1 {
     border-radius: 50px;
     position: absolute;
     left: 760px;
-    bottom: 460px;
+    bottom: 480px;
     display:none;
 }
 
@@ -139,7 +141,7 @@ h1 {
     border-radius: 50px;
     position: absolute;
     left: 515px;
-    bottom: 140px;
+    bottom: 180px;
     display:none;
 }
 
@@ -165,8 +167,8 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 300px;
-    bottom:320px;
+    left: 340px;
+    bottom:318px;
     display:none;
 }
 
@@ -178,8 +180,8 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 1000px;
-    bottom: 320px;
+    left: 1020px;
+    bottom: 385px;
     display:none;
 }
 
@@ -191,8 +193,8 @@ h1 {
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    left: 400px;
-    bottom:350px;
+    left: 410px;
+    bottom:395px;
     display:none;
 }
 
@@ -210,17 +212,18 @@ h1 {
 #messageBox{
     color: white;
     font-size:20px;
-    line-height:25px;
+    line-height:30px;
     background: rgba(0, 0, 0, 0.92);
     width: 380px;
     height: 421px;
     position: absolute;
-    left: 450px;
+    left: 470px;
     bottom: 0;
     border-radius: 60px 60px 15px 15px;
     padding: 25px 20px 20px 28px;
     display: none;
     animation: fadein 1s; 
+  
    
 }
 
@@ -257,6 +260,7 @@ h1 {
 #form {
     text-align: center;
     margin:20px;
+    font-size:20px;
 }
 
 
@@ -318,14 +322,31 @@ h1 {
 
 
 
+    
+
 
 #gameOver {
     background-color:black;
-    color:red;
     height:100%;
     display: none;
-    
+    color:red;
+    font-size:50px;
+    text-align:center;
  
 
 }
 
+.reset {
+    width: 79px;
+    height: 32px;
+    text-align: center;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    position: absolute;
+    top: 310px;
+    left: 686px;
+   
+}
