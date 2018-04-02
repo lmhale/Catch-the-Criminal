@@ -8,7 +8,7 @@ let H1 = $('<h1/>');
 H1.appendTo('#container');
 H1.text("Catch the Criminal");
 
-
+$(".rules").appendTo('#container');
 
 let gamePage = $('<div/>');
 gamePage.attr('id','board');
@@ -38,7 +38,8 @@ $('#myForm').appendTo(formDiv);
 
     $("#myForm").submit(function(e) {
         
-      
+        $('#moneyBox').appendTo('#board');
+        $('#moneyBox').show();
       
         $("#container").hide();
         $("#board").show();
@@ -55,7 +56,7 @@ $('#myForm').appendTo(formDiv);
     $("#myForm").submit(function(e) {
        $('#messageBox').show();
         user = $('#input_name').val(); 
-        message = `<span class="span">Welcome detective ${user}! </span> <br/> <p>The international jewel thief was spotted most recently in the open-air markets of Tehran. You better get to work!</p> `; 
+        message = `<span class="span">Welcome detective ${user}! </span> <br/> <p>The international jewel thief was spotted most recently in the open-air markets of Tehran. Catch a flight to Tehran to see if you can discover any leads about the thief's whereabouts. We're counting on you detective! </p> `; 
        
         $(message).appendTo('#messageBox');
 
@@ -86,7 +87,7 @@ let contBtn = $("#contBtn");
 $("#Iran").click((e) => {
     $("#Iran").hide();
     $("#messageBox").show();
-    message="Go to Australia";
+    message='Looks like you just missed the thief! Read the testimony from the local witness to decide your next move.<br/><br/> Witness: "I saw him wandering around the market checking out other peoples wares. I overheard him talking about Bennelong Point and how opera goers tend to have expensive jewlery."';
     $('#messageBox').html(message);
     // Iran continue button
     $("#messageBox").append(contBtn);
@@ -97,28 +98,187 @@ $("#Iran").click((e) => {
         $("#Brazil").show();
         $("#Russia").show();
     });
-    $("#Australia").click(function(){
-        $("#messageBox").show(); 
-        message="hiiiiiiii";
-        $('#messageBox').html(message);
-        $("#messageBox").append(contBtn);
-        $("#Brazil").hide();
-            $("#Russia").hide();
-        //continue button form australia
-        $("#contBtn").click(function(){
-            $("#messageBox").hide();
-            $('#Australia').hide();
-            $('#unitedStates').show();
-            $('#Brazil').show();
-            $("#Brazil").click(function(){
+    // Australia click event 
+ $("#Australia").click(function(){
+    $("#messageBox").show(); 
+    message='Looks like another narrow escape. Several people saw the thief at the Sydney Opera House just 2 hours prior. <br/><br/> Witness:"We were chatting about the sites in Australia and I remember him saying that he is trying to savor the fresh air and uncensored internet before his next trip."';
+    $('#messageBox').html(message);
+    $("#messageBox").append(contBtn);
+    $("#Brazil").hide();
+    $("#Russia").hide();
+        //continue button from australia
+    $("#contBtn").click(function(){
+    $("#messageBox").hide();
+    $('#Australia').hide();
+    $('#unitedStates').show();
+    $('#Brazil').show();
+    $('#China').show();
+
+            // Brazil click event (after AUS continue button)
+     $("#Brazil").click(function(){
+     $("#messageBox").show(); 
+     $("#Brazil").hide();
+      message="Oh no! one has seen the jewel thief here! That plane ride cost you some time and money";
+      $('#messageBox').html(message);
+      $("#messageBox").append(contBtn);
+      //continue button for Brazil
+      $("#contBtn").click(function(){
+      $("#messageBox").hide();
+                  
+       });
+        e.preventDefault();
+            });
+            // U.S. click event (inside Aus continue button click event)
+            $("#unitedStates").click(function(){
                 $("#messageBox").show(); 
-                message="this is a different message";
+                $("#unitedStates").hide();
+                message="Oh no! one has seen the jewel thief here! That plane ride cost you some time and money";
                 $('#messageBox').html(message);
                 $("#messageBox").append(contBtn);
-                 //continue button form australia
+                 //continue button for u.s.
                  $("#contBtn").click(function(){
                     $("#messageBox").hide();
                   
+                });
+                e.preventDefault();
+            });
+            // China click event (inside AUS continue button click event)
+            $("#China").click(function(){
+                $("#China").hide();
+                $("#Brazil").hide();
+                $("#unitedStates").hide();
+
+                $("#messageBox").show(); 
+                message='Someone in the forbidden city has a lead on our crook! <br/><br/> Witness: "All I know is that he seemed really hungry. He said he was craving a Croque-monsieur"';
+                $('#messageBox').html(message);
+                $("#messageBox").append(contBtn);
+                 //continue button for China
+                 $("#contBtn").click(function(){
+                    $("#messageBox").hide();
+                    $("#France").show();
+                    $("#India").show();
+                    $("#Mexico").show();
+
+                  // France (triggered by China continue button)
+                  $("#France").click(function(){
+                    $("#messageBox").show(); 
+                    
+                    message=`You're getting close detective, the thief was spotted eating at a streetside cafe in Paris. Maybe the transcript from the waitress can give you a clue about where he is headed next. <br/><br/> Waitress: " I asked him if he enjoyed his food and he replied, 'I ate so much that I need redemption from christ!'" `;
+                    $('#messageBox').html(message);
+                    $("#messageBox").append(contBtn);
+                    $("#France").hide();
+                    $("#Mexico").hide();
+                    $("#India").hide();
+                     //continue button for France
+                     $("#contBtn").click(function(){
+                        $("#messageBox").hide();
+                         
+                        $("#Brazil").show();
+                        $("#unitedStates").show();
+                        $("#Russia").show();
+                    
+                    //
+                    $("#Brazil").click(function(){
+                        $("#messageBox").show(); 
+                        $("#unitedStates").hide();
+                        $("#Brazil").hide();
+                        message="go to Russia";
+                        $('#messageBox').html(message);
+                        $("#messageBox").append(contBtn);
+                         //continue button for Brazil
+                         $("#contBtn").click(function(){
+                            $("#messageBox").hide();
+                            $("#India").show();
+                            $("#Mexico").show();
+
+                    // Russia (final criminal destination)
+                    
+                    $("#Russia").click(function(){
+                        $("#messageBox").show(); 
+                              
+                           message="You caught the jewel thief! Just in time too, he was stuffing his pockets with valuables at the palace";
+                           $('#messageBox').html(message);
+                           $("#messageBox").append(contBtn);
+                           //continue button for Russia
+                           $("#contBtn").click(function(){
+                           $("#messageBox").hide();
+                                  $("#Mexico").hide();
+                                
+                              });
+                              e.preventDefault();
+                          });
+                          
+                       // mexico (triggered by brazil continue button)
+                        $("#Mexico").click(function(){
+                          $("#messageBox").show(); 
+                                
+                             message="oh know no one has seen the thief here!!! That plane ride cost you some time and money.";
+                             $('#messageBox').html(message);
+                             $("#messageBox").append(contBtn);
+                             //continue button for Mexico
+                             $("#contBtn").click(function(){
+                             $("#messageBox").hide();
+                                    $("#Mexico").hide();
+                                  
+                                });
+                                e.preventDefault();
+                            });
+            
+
+
+
+                          
+                        });
+                        e.preventDefault();
+                    });
+    
+
+
+
+
+                    //U.S. triggered by France continue button
+                    $("#unitedStates").click(function(){
+                        $("#messageBox").show(); 
+                        
+                        message="oh know no one has seen the thief here!!! That plane ride cost you some time and money.";
+                        $('#messageBox').html(message);
+                        $("#messageBox").append(contBtn);
+                         //continue button for unites states
+                         $("#contBtn").click(function(){
+                            $("#messageBox").hide();
+                            $("#unitedStates").hide();
+                          
+                        });
+                        e.preventDefault();
+                    });
+    
+    
+                    
+
+                      
+                    });
+                });
+
+
+                  
+
+                  // India (triggered by china continue button)
+                  $("#India").click(function(){
+                    $("#messageBox").show(); 
+                    
+                    message="oh know no one has seen the thief here!!! That plane ride cost you some time and money.";
+                    $('#messageBox').html(message);
+                    $("#messageBox").append(contBtn);
+                     //continue button for India
+                     $("#contBtn").click(function(){
+                        $("#messageBox").hide();
+                        $("#India").hide();
+                      
+                    });
+                    e.preventDefault();
+                });
+
+
                 });
                 e.preventDefault();
             });
@@ -127,13 +287,14 @@ $("#Iran").click((e) => {
         
         e.preventDefault();
     });
-////////// Brazil
+////////// Brazil (from Iran click event)
 $("#Brazil").click(function(){
     $("#messageBox").show(); 
-    message="oh know none of the witnesses have seen the thief! The plane ride cost you some time";
+    $("#Brazil").hide();
+    message="oh know no one has seen the thief here! That plane ride cost you some time and money.";
     $('#messageBox').html(message);
     $("#messageBox").append(contBtn);
-     //continue button form australia
+     //continue button for Brazil
      $("#contBtn").click(function(){
         $("#messageBox").hide();
       
@@ -145,7 +306,8 @@ $("#Brazil").click(function(){
 
 $("#Russia").click(function(){
     $("#messageBox").show(); 
-    message="not in Russia";
+    $("#Russia").hide();
+    message="oh know no one has seen the thief here! That plane ride cost you some time and money.";
     $('#messageBox').html(message);
     $("#messageBox").append(contBtn);
     //continue button for Russia
@@ -181,8 +343,27 @@ let China = $('#China').appendTo('#board');
 let unitedStates = $('#unitedStates').appendTo('#board');
 let countries = [Iran,Australia,France,Russia,Brazil,India,Mexico,China,unitedStates];
 
+let gameOver = $('<div/>').text("game over");
+gameOver.attr('id','gameOver');
+gameOver.appendTo('body');
+
+$(".reset").appendTo('#gameOver');
+
+$('.reset').click(function() {
+    location.reload();
+});
 
 
+var count = 2000;
+$('#moneyBox').html("$"+ count);
+$('.tooltip').click(function () {
+
+    $('#moneyBox').html("$" + (count-=1000));
+    if (count < 1000){
+     $("#board").hide();
+     $("#gameOver").show();
+}
+}); 
 
 
 
